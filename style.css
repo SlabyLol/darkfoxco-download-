@@ -1,0 +1,8 @@
+body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+header { background: #222; color: #fff; padding: 20px; text-align: center; }
+h1 { margin: 0; }
+button { padding: 10px 15px; margin-top: 10px; cursor: pointer; }
+section { padding: 20px; max-width: 800px; margin: auto; background: #fff; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+#dropZone { border: 2px dashed #333; padding: 20px; margin-bottom: 20px; text-align: center; background: #eee; cursor: pointer; }
+li { margin-bottom: 10px; }
+#adminPanel { display: none; }
