@@ -1,0 +1,24 @@
+name: Generate file list
+
+on:
+  push:
+    paths:
+      - 'files/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: List files
+      run: |
+        mkdir -p output
+        ls files > output/filelist.txt
+        jq -R -s -c 'split("\n")[:-1]' output/filelist.txt > filelist.json
+    - name: Commit filelist.json
+      run: |
+        git config --local user.name "github-actions"
+        git config --local user.email "actions@github.com"
+        git add filelist.json
+        git commit -m "Update file list" || echo "No changes"
+        git push
